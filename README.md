@@ -4,6 +4,10 @@
 O projeto é feito em python e tem como principal função simular o sistema de gerenciamento de uma biblioteca. Com as funções de adicionar livros e usuarios e visualiza-los. O programa tem uma interface 
 simples, mas muito intuitiva e eficaz.
 
+### Diagrama UML:  
+
+![image](https://github.com/user-attachments/assets/1497373b-884a-49ca-9162-27f99348ff57)
+
 ## Manual de instalação/compilação
 
 Certifique-se de ter o python instalado no seu computador, ou instale através desse link: [Instalação Python](https://python.org.br/instalacao-windows/)
@@ -50,9 +54,6 @@ Aqui vai mostrar todos os usuarios cadastrados, e seus respectivos numeros de ma
 
 
 ## Codigo Explicado:
-### Diagrama UML:  
-
-![image](https://github.com/user-attachments/assets/1497373b-884a-49ca-9162-27f99348ff57)
 
 ### Classes:
 
