@@ -1,23 +1,23 @@
 # Sistema de Gerenciamento de Biblioteca
 
 ## Visão Geral
-O projeto é feito em python e tem como principal função simular o sistema de gerenciamento de uma biblioteca. Com as funções de adicionar livros e usuarios e visualiza-los. O programa tem uma interface simples, mas muito intuitiva e eficaz.
+O projeto é feito em python e tem como principal função simular o sistema de gerenciamento de uma biblioteca. Com as funções de adicionar livros e usuarios e visualiza-los. O programa tem uma interface 
+simples, mas muito intuitiva e eficaz.
 
-## Como executar
-Certifique que todas as extensões do programa python estejam instaladas no Visual Studio Code.  
+## Manual de instalação/compilação
 
-Clone esse repositorio do github no Vscode com o o seguinte codigo:
+Certifique-se de ter o python instalado no seu computador, ou instale através desse link: [Instalação Python](https://python.org.br/instalacao-windows/)
+
+1.  Com o python instalado, clone este repositorio no seu Visual Studio Code
+
+imagem Clona repositorio
+**
+
+2.  Execute ele pelo terminal digitando "python nomedoprograma.py", Por exemplo:
 ```
-git clone (link do repositorio)
+python biblioteca.py
 ```
-
-Depois disso, Para executar é só digitar:
-
-```
-python.exe ./nomedoarquivo
-```
-
-## Como usar
+## Guia do usuario
 
 ### Tela Inicial
 Com o programa ja aberto, a tela principal é aberta com quatro opções, Cadastrar Livro, Cadastrar Usuario, Visualizar Livros e Visualizar Usuarios.
@@ -25,28 +25,42 @@ Com o programa ja aberto, a tela principal é aberta com quatro opções, Cadast
 ![TelaPrincipal](image.png)
 
 ### Cadastrar Livro
-
+Para cadastrar um livro é necessario apenas digitar o titulo do livro que deseja adicionar, o nome do autor do livro e o ISBN, que é um código numérico que serve para identificar publicações monográficas, como livros, artigos e apostilas. Com as informações preenchidas clique em adicionar
 ![alt text](image-3.png)
 
 ### Cadastrar Usuario
+Para cadastrar um usuario é preciso preencher as informações, nome e matricula. Depois clique em adicionar
 
 ![alt text](image-4.png)
 
 ### Visualizar Livros
+A aba de visualizar livros, vai mostrar todos os livros que você adicionou. 
 
 ![alt text](image-5.png)
 
 ### Visualizar Usuarios
+Aqui vai mostrar todos os usuarios cadastrados, e seus respectivos numeros de matricula.
 
 ![alt text](image-6.png)
 
+
+
 ## Codigo Explicado
+Diagrama UML de como funciona o programa:  
+
+![image](https://github.com/user-attachments/assets/1497373b-884a-49ca-9162-27f99348ff57)
+
+### Classes
+
+#### Item Biblioteca
 Aqui é definida a classe mãe, e o seu metodo construtor que é responsavel por criar o atributo titulo.
 ```
 class ItemBiblioteca:
     def __init__(self, titulo):
         self.titulo = titulo
 ```
+
+#### Livro e Usuario
 Então sao criadas as classes filhas da classe mãe, Livro e Usuario, elas herdam da classe ItemBiblioteca. Cada uma tem seus respectivos atributos e é utilizada a função super(), para dar acesso a classe mãe.
 ```
 class Livro(ItemBiblioteca):
