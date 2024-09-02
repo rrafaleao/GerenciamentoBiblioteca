@@ -22,35 +22,39 @@ python biblioteca.py
 ### Tela Inicial
 Com o programa ja aberto, a tela principal é aberta com quatro opções, Cadastrar Livro, Cadastrar Usuario, Visualizar Livros e Visualizar Usuarios.
 
-![TelaPrincipal](image.png)
+![image](https://github.com/user-attachments/assets/4a7f1313-afca-4113-8a06-20ba02afe1e0)
+
 
 ### Cadastrar Livro
-Para cadastrar um livro é necessario apenas digitar o titulo do livro que deseja adicionar, o nome do autor do livro e o ISBN, que é um código numérico que serve para identificar publicações monográficas, como livros, artigos e apostilas. Com as informações preenchidas clique em adicionar
-![alt text](image-3.png)
+Para cadastrar um livro é necessario apenas digitar o titulo do livro que deseja adicionar, o nome do autor do livro e o ISBN, que é um código numérico que serve para identificar publicações monográficas, como livros, artigos e apostilas. Com as informações já preenchidas, clique em salvar.  
+
+![image](https://github.com/user-attachments/assets/eb775ffe-0061-4581-9277-948a72851f17)
+
 
 ### Cadastrar Usuario
-Para cadastrar um usuario é preciso preencher as informações, nome e matricula. Depois clique em adicionar
+Para cadastrar um usuario é preciso preencher as informações, nome e matricula. Depois, clique em salvar.
 
-![alt text](image-4.png)
+![image](https://github.com/user-attachments/assets/533cc2f4-e41e-43bc-8f02-dabbe7ac5c41)
+
 
 ### Visualizar Livros
 A aba de visualizar livros, vai mostrar todos os livros que você adicionou. 
 
-![alt text](image-5.png)
+![image](https://github.com/user-attachments/assets/f52133ba-b270-4180-a874-fe30bfe38747)
+
 
 ### Visualizar Usuarios
 Aqui vai mostrar todos os usuarios cadastrados, e seus respectivos numeros de matricula.
 
-![alt text](image-6.png)
+![image](https://github.com/user-attachments/assets/f265ab3c-3f60-4e59-9357-4013ec11cb36)
 
 
-
-## Codigo Explicado
-Diagrama UML de como funciona o programa:  
+## Codigo Explicado:
+### Diagrama UML:  
 
 ![image](https://github.com/user-attachments/assets/1497373b-884a-49ca-9162-27f99348ff57)
 
-### Classes
+### Classes:
 
 #### Item Biblioteca
 Aqui é definida a classe mãe, e o seu metodo construtor que é responsavel por criar o atributo titulo.
@@ -103,13 +107,15 @@ class GerenciadorDePedidos:
             return True
         return False
 ```
-E por fim, a classe BibliotecaApp, que é onde toda a interface visual é feita. Aqui todas as telas são criadas e feitas utilizando a logica do programa feita acima.
+E por fim, a classe BibliotecaApp, que é onde toda a interface visual é feita. Aqui todas as telas são criadas e feitas utilizando a logica do programa feita acima. TUdo isso utilizando a biblioteca TkInter do Python.
 ```
 class BibliotecaApp:
     def __init__(self, root):
         self.root = root
         self.biblioteca = Biblioteca()
-
+```
+Criação da janela principal, root. E a instancia da classe biblioteca que tem as informações dos livros
+```
         self.main_frame = tk.Frame(root)
         self.main_frame.pack()
 
@@ -128,7 +134,9 @@ class BibliotecaApp:
         # Tela de Visualização de Usuários
         self.visualizar_usuarios_button = tk.Button(self.main_frame, text="Visualizar Usuários", command=self.visualizar_usuarios)
         self.visualizar_usuarios_button.pack()
-
+```
+Criação dos botões da tela principal
+```
     def cadastro_livro(self):
         self.main_frame.pack_forget()
         cadastro_livro_frame = tk.Frame(self.root)
@@ -149,7 +157,9 @@ class BibliotecaApp:
         isbn_label.pack()
         isbn_entry = tk.Entry(cadastro_livro_frame)
         isbn_entry.pack()
-
+```
+Onde o usuario escreve as informações do livro.
+```
         def salvar_livro():
             titulo = titulo_entry.get()
             autor = autor_entry.get()
@@ -158,13 +168,17 @@ class BibliotecaApp:
             self.biblioteca.adicionar_livro(novo_livro)
             cadastro_livro_frame.pack_forget()
             self.main_frame.pack()
-
+```
+Salva as informações que o usuario escreveu anteriormente.
+```
         salvar_button = tk.Button(cadastro_livro_frame, text="Salvar", command=salvar_livro)
         salvar_button.pack()
 
         voltar_button = tk.Button(cadastro_livro_frame, text="Voltar", command=lambda: self.voltar(cadastro_livro_frame))
         voltar_button.pack()
-
+```
+Botões de salvar e voltar.
+```
     def cadastro_usuario(self):
         self.main_frame.pack_forget()
         cadastro_usuario_frame = tk.Frame(self.root)
@@ -188,13 +202,17 @@ class BibliotecaApp:
             self.biblioteca.adicionar_usuario(novo_usuario)
             cadastro_usuario_frame.pack_forget()
             self.main_frame.pack()
-
+```
+Onde o usuario escreve as informações do usuario. E salva passando para a classe biblioteca
+```
         salvar_button = tk.Button(cadastro_usuario_frame, text="Salvar", command=salvar_usuario)
         salvar_button.pack()
 
         voltar_button = tk.Button(cadastro_usuario_frame, text="Voltar", command=lambda: self.voltar(cadastro_usuario_frame))
         voltar_button.pack()
-
+```
+Botões de salvar e voltar.
+```
     def visualizar_livros(self):
         self.main_frame.pack_forget()
         visualizar_livros_frame = tk.Frame(self.root)
@@ -206,7 +224,9 @@ class BibliotecaApp:
 
         voltar_button = tk.Button(visualizar_livros_frame, text="Voltar", command=lambda: self.voltar(visualizar_livros_frame))
         voltar_button.pack()
-
+```
+Checa toda a classe livro e se for encontrado algo ele vai ficar na tela.
+```
     def visualizar_usuarios(self):
         self.main_frame.pack_forget()
         visualizar_usuarios_frame = tk.Frame(self.root)
@@ -215,7 +235,9 @@ class BibliotecaApp:
         for usuario in self.biblioteca.usuarios:
             usuario_label = tk.Label(visualizar_usuarios_frame, text=f"Nome: {usuario.titulo}, Matrícula: {usuario.matricula}")
             usuario_label.pack()
-
+```
+Checa a classe usuario e se algo for encontrado ele vai mostrar na tela.
+```
         voltar_button = tk.Button(visualizar_usuarios_frame, text="Voltar", command=lambda: self.voltar(visualizar_usuarios_frame))
         voltar_button.pack()
 
@@ -223,3 +245,4 @@ class BibliotecaApp:
         frame.pack_forget()
         self.main_frame.pack()
 ```
+Botão de voltar.
