@@ -12,12 +12,18 @@ simples, mas muito intuitiva e eficaz.
 
 Certifique-se de ter o python instalado no seu computador, ou instale através desse link: [Instalação Python](https://python.org.br/instalacao-windows/)
 
-1.  Com o python instalado, clone este repositorio no seu Visual Studio Code
+Com o python instalado, clone este repositorio no seu Visual Studio Code, fazendo isso:
 
-imagem Clona repositorio
-**
+Vá na aba "Source Control" Do Visual Studio Code, e clique em Clone repository.
 
-2.  Execute ele pelo terminal digitando "python nomedoprograma.py", Por exemplo:
+![image](https://github.com/user-attachments/assets/09ad9447-edba-464b-8fc9-f6f8cf85f668)
+
+Copie o link desse repositorio cole na aba e salve aonde você achar melhor.
+
+![image](https://github.com/user-attachments/assets/29934003-c1f5-492d-be80-9a992362c942)
+
+
+Execute ele pelo terminal digitando "python nomedoprograma.py", Por exemplo:
 ```
 python biblioteca.py
 ```
